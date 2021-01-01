@@ -1,0 +1,158 @@
+/*
+  * created by shao.yuhong
+  * emial:1045749725@qq.com 
+  * 初始化全局样式
+*/
+body,html,p,div,section,header,footer,li,ul{
+    margin:0;
+    padding: 0;
+    line-height: 1;
+    word-break: break-all;
+}
+h1,h2,h3,h4,h5,h6{
+    margin:0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+ul,li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.overflow{
+    overflow: auto;
+}
+.notify-label{
+    color:#e02d2d;
+    display:inline-block;
+    flex:0 0 60px;
+    text-align: right;
+  }
+.notify-item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+}
+.notify-item:first-child{
+    margin-top: 20px;
+}
+.notify-message{
+    flex:1;
+    line-height: 1.5;
+}
+ /* 定义滚动条样式 */
+ ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+   
+  /*定义滚动条轨道 内阴影+圆角*/
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #FFFFFF;  //整个条的颜色 
+  }
+   
+  /*定义滑块 内阴影+圆角*/
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #ccc;   //当前区域的颜色
+  }
+@keyframes move{
+    0%,100%{
+        background-position: 0 0 ;
+        letter-spacing: 2px;
+    }
+    25%{
+        background-position: 200px 200px;
+    }
+    50%{
+        background-position: 300px 100px;
+        letter-spacing: -80px;
+    }
+    75%{
+        background-position: 200px 300px;
+    }
+
+}
+#__nuxt{
+    height: 100vh;
+    #__layout, .layouts,.el-container{
+        height: inherit;
+        .el-header,.el-main{
+            padding: 0;
+        }
+        .el-header{
+            display: flex;
+            justify-content: flex-start;
+            align-items: stretch;
+            position: relative;
+            z-index: 10;
+            .logo-box{
+                flex: 0 0 200px;
+                height: 100%;
+                line-height: 80px;
+                font-size: 40px;
+                text-align: center;
+                color: transparent;
+                background-image: url("../img/timg.jpg");
+                background-clip: text;
+                -webkit-background-clip: text;
+                animation:move 20s infinite;
+                font-weight: bold;
+                letter-spacing: 5px;
+            }
+            .header-right-box{
+                flex:1;
+                padding-left: 20px;
+                padding-right: 20px;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: flex-start;
+                align-items: stretch;
+                text-align: right;
+                .login-group{
+                    flex:0 0 400px;
+                    height: inherit;
+                }
+                iframe{
+                    flex:1;
+                    height: inherit;
+                }
+            }
+        }
+        .el-main{
+            padding: 20px 20px 0;
+            box-sizing: border-box;
+            max-width: 100%;
+            word-wrap: break-all;
+            min-width: 1000px;
+            overflow-x: hidden;
+        }
+    }
+    .content-wrap{
+        height: calc(100% - 80px);
+    }
+ 
+
+}
+.min-height-500{
+    min-height: calc( 100vh - 164px);
+}
+/* 渐变动画 */
+.fade-enter,.fade-leave-to{
+    opacity:0;
+   transform: translateX(50px);
+}
+.fade-enter-to,.fade-leave{
+    opacity: 1;
+    transform: translateX(0);
+}
+.fade-enter-active,.fade-leave-active{
+    transition: all .8s;
+}
