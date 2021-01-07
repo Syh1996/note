@@ -393,6 +393,7 @@ export default {
       let ctx=oCanvas.getContext("2d");
       let now = new Date();
       let year = now.getFullYear();
+      ctx.clearRect(0,0,400,400);
       ctx.fillStyle="#efefef";
       ctx.textAlign="center"; 
       ctx.font="50px Arial";
